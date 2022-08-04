@@ -1,6 +1,12 @@
 /* This file is for your main application CSS */
 @import "./phoenix.css";
 
+.links {
+  font-size: medium;
+}
+.main {
+  font-size:large;
+}
 /* Alerts and form errors used by phx.new */
 .alert {
   font-size: medium;

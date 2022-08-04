@@ -11,7 +11,7 @@
   <tbody>
 <%= for topic <- @topics do %>
     <tr>
-      <td><span><%= link topic.title, to: Routes.topic_path(@conn, :show, topic) %></span></td>
+      <td><span class="main"><%= link topic.title, to: Routes.topic_path(@conn, :show, topic) %></span></td>
 
       <td>
       
