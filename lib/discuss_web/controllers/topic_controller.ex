@@ -16,10 +16,10 @@ defmodule DiscussWeb.TopicController do
 
   def create(conn, %{"topic" => topic_params}) do
     case Discussions.create_topic(topic_params) do
-      {:ok, topic} ->
+      {:ok, _topic} ->
         conn
         |> put_flash(:info, "Topic created successfully.")
-        |> redirect(to: Routes.topic_path(conn, :show, topic))
+        |> redirect(to: Routes.topic_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -41,10 +41,10 @@ defmodule DiscussWeb.TopicController do
     topic = Discussions.get_topic!(id)
 
     case Discussions.update_topic(topic, topic_params) do
-      {:ok, topic} ->
+      {:ok, _topic} ->
         conn
         |> put_flash(:info, "Topic updated successfully.")
-        |> redirect(to: Routes.topic_path(conn, :show, topic))
+        |> redirect(to: Routes.topic_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", topic: topic, changeset: changeset)

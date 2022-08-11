@@ -1,22 +1,23 @@
-<h1>Topics</h1>
+<h4>Topics</h4>
 
 <table>
-  <thead>
+  <%# <thead>
     <tr>
       <th>Title</th>
 
       <th></th>
     </tr>
-  </thead>
+  </thead> %>
   <tbody>
 <%= for topic <- @topics do %>
     <tr>
       <td><span class="main"><%= link topic.title, to: Routes.topic_path(@conn, :show, topic) %></span></td>
 
       <td>
-      
+        <div class="right">
         <span><%= link "Edit", class: "btn btn-primary", to: Routes.topic_path(@conn, :edit, topic) %></span>
         <span><%= link "Delete", class: "btn btn-primary", to: Routes.topic_path(@conn, :delete, topic), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        </div>
       </td>
     </tr>
 <% end %>

@@ -18,7 +18,6 @@ defmodule DiscussWeb.Router do
     pipe_through :browser
 
     get "/", TopicController, :index
-    get "/topic/new", TopicController, :new
     resources "/users", UserController
     resources "/topics", TopicController
     resources "/comments", CommentController
