@@ -14,10 +14,12 @@
       <td><span class="main"><%= link topic.title, to: Routes.topic_path(@conn, :show, topic) %></span></td>
 
       <td>
+      <%= if @conn.assigns.user != nil and @conn.assigns.user.id == topic.user_id do %>
         <div class="right">
         <span><%= link "Edit", class: "btn btn-primary", to: Routes.topic_path(@conn, :edit, topic) %></span>
         <span><%= link "Delete", class: "btn btn-primary", to: Routes.topic_path(@conn, :delete, topic), method: :delete, data: [confirm: "Are you sure?"] %></span>
         </div>
+      <% end %>
       </td>
     </tr>
 <% end %>

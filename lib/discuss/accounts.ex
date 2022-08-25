@@ -36,7 +36,8 @@ defmodule Discuss.Accounts do
 
   """
   def get_user!(id), do: Repo.get!(User, id)
-
+  def get_by(email), do: Repo.get_by(User, email: email)
+  def get(id), do: Repo.get(User, id)
   @doc """
   Creates a user.
 

@@ -49,8 +49,8 @@ defmodule Discuss.Discussions do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_topic(attrs \\ %{}) do
-    %Topic{}
+  def create_topic(orig \\ %Topic{}, attrs \\ %{}) do
+    orig
     |> Topic.changeset(attrs)
     |> Repo.insert()
   end

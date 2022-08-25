@@ -5,6 +5,8 @@ defmodule DiscussWeb.UserController do
   alias Discuss.Accounts.User
 
   def index(conn, _params) do
+    IO.puts("++++++++++++++++++++++++++++++++++++++++++++++++")
+    IO.inspect(conn.assigns.user)
     users = Accounts.list_users()
     render(conn, "index.html", users: users)
   end
